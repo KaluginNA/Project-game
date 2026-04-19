@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Курсач.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="game">
+    <h1>УГАДАЙ ЧИСЛО</h1>
+    <p>Я загадал число от 1 до 100. Попробуй угадать!</p>
+    
+    <input type="text" id="playerName" placeholder="Ваше имя" style="width: 100%; margin-bottom: 15px;">
+    <input type="number" id="guessInput" placeholder="Введите число">
+    <button id="guessBtn">Проверить</button>
+    <button id="newGameBtn">Новая игра</button>
+    
+    <div class="log" id="log">
+        <p>Введите имя и начните игру!</p>
+    </div>
+    
+    <div class="records">
+        <h3>ТАБЛИЦА РЕКОРДОВ</h3>
+        <table id="recordsTable">
+            <thead><tr><th>Имя</th><th>Попытки</th><th>Дата</th></tr></thead>
+            <tbody id="recordsBody"><tr><td colspan="3">Нет рекордов</td></tr></tbody>
+        </table>
+        <button id="clearRecordsBtn" style="margin-top: 10px; width: 100%;">Очистить рекорды</button>
+    </div>
+</div>
+
+    </div>
+    <script>
+
+        function addMessage(message) {
+        const logDiv = document.getElementById('log');
+        const p = document.createElement('p');
+        p.textContent = message;
+        logDiv.appendChild(p);
+        logDiv.scrollTop = logDiv.scrollHeight;
+    }
+
+    function clearLog() {
+        const logDiv = document.getElementById('log');
+        logDiv.innerHTML = '';
+    }
+
+      function newGame() {
+        const nameInput = document.getElementById('playerName');
+        let Name = nameInput.value.trim();
+        
+        if(Name === ''){
+            Name = 'Гость';
+        }
+
+   
+    
+        let Name = prompt('Давай сыграем в игру, введите своё имя?')
+if(Name === null || Name === ''){
+    Name = 'Гость'
+}
+addMessage(`Привет ${Nmae} давай сыграем`)
+
+let RandomNumber = Math.floor(Math.random() * 100) +1
+addMessage(`Я загадал число от 1 до 100, попробуй его угадать ${Name}`)
+addMessage(`Подсказка, я загадал число ${RandomNumber}`)
+
+
+let records = [];
+let popitki = 0
+let guessed = false;
+
+while(!guessed){
+    let UserGest = prompt('Введите числою')
+    if(UserGest === null){
+        addMessage('Игра прервана')
+        break
+
+    }
+    if(UserGest === ''){
+        addMessage('Игра прервана, загадайте число!')
+        continue
+    }
+
+    let UserGeee = Number(UserGest)
+    if(isNaN(UserGeee)){
+        addMessage('Это не число!')
+    }
+    popitki++
+
+    if(UserGeee === RandomNumber){
+        addMessage(`Ура, поздравляю ${Name} ты угадал ${RandomNumber} за ${popitki} попыток`)
+        guessed = true;
+    }
+    else if(UserGeee > RandomNumber){
+        addMessage('Меньше')
+    } else if(UserGeee < RandomNumber){
+        addMessage('Больше')
+    }
+}
+
+
+
+
+
+
+    </script>
+</body>
+</html>
