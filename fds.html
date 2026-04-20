@@ -34,26 +34,7 @@
     </div>
     <script>
 
-        function addMessage(message) {
-        const logDiv = document.getElementById('log');
-        const p = document.createElement('p');
-        p.textContent = message;
-        logDiv.appendChild(p);
-        logDiv.scrollTop = logDiv.scrollHeight;
-    }
-
-    function clearLog() {
-        const logDiv = document.getElementById('log');
-        logDiv.innerHTML = '';
-    }
-
-      function newGame() {
-        const nameInput = document.getElementById('playerName');
-        let Name = nameInput.value.trim();
         
-        if(Name === ''){
-            Name = 'Гость';
-        }
 
    
     
