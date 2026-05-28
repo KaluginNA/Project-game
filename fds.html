@@ -13,7 +13,7 @@
     <p>Я загадал число от 1 до 100. Попробуй угадать!</p>
     
     <input type="text" id="playerName" placeholder="Ваше имя" style="width: 100%; margin-bottom: 15px;">
-    <input type="number" id="guessInput" placeholder="Введите число">
+    <input type="text" id="guessInput" placeholder="Введите число">
     <button id="guessBtn">Проверить</button>
     <button id="newGameBtn">Новая игра</button>
     
@@ -27,66 +27,11 @@
             <thead><tr><th>Имя</th><th>Попытки</th><th>Дата</th></tr></thead>
             <tbody id="recordsBody"><tr><td colspan="3">Нет рекордов</td></tr></tbody>
         </table>
-        <button id="clearRecordsBtn" style="margin-top: 10px; width: 100%;">Очистить рекорды</button>
+        <button id="clearRecordsBtn" style="margin-top: 20px; width: 100%;">Очистить рекорды</button>
     </div>
 </div>
 
     </div>
-    <script>
-
-        
-
-   
-    
-        let Name = prompt('Давай сыграем в игру, введите своё имя?')
-if(Name === null || Name === ''){
-    Name = 'Гость'
-}
-addMessage(`Привет ${Nmae} давай сыграем`)
-
-let RandomNumber = Math.floor(Math.random() * 100) +1
-addMessage(`Я загадал число от 1 до 100, попробуй его угадать ${Name}`)
-addMessage(`Подсказка, я загадал число ${RandomNumber}`)
-
-
-let records = [];
-let popitki = 0
-let guessed = false;
-
-while(!guessed){
-    let UserGest = prompt('Введите числою')
-    if(UserGest === null){
-        addMessage('Игра прервана')
-        break
-
-    }
-    if(UserGest === ''){
-        addMessage('Игра прервана, загадайте число!')
-        continue
-    }
-
-    let UserGeee = Number(UserGest)
-    if(isNaN(UserGeee)){
-        addMessage('Это не число!')
-    }
-    popitki++
-
-    if(UserGeee === RandomNumber){
-        addMessage(`Ура, поздравляю ${Name} ты угадал ${RandomNumber} за ${popitki} попыток`)
-        guessed = true;
-    }
-    else if(UserGeee > RandomNumber){
-        addMessage('Меньше')
-    } else if(UserGeee < RandomNumber){
-        addMessage('Больше')
-    }
-}
-
-
-
-
-
-
-    </script>
+    <script src="/index.js"></script>
 </body>
 </html>
