@@ -1,6 +1,7 @@
 * {
     padding: 0;
     box-sizing: border-box;
+    margin: auto;
 }
 
 body {
@@ -10,28 +11,69 @@ body {
     padding: 20px;
 }
 
-.game-container {
-    flex-direction: column;
-    display: flex;
-    width: 1300px;
-    height: 900px;
-    background-color: rgb(37, 37, 37);
-    margin: auto;
+.game{
+    width: 700px;
+    height: 1200px;
+    background-color: #121227;
+    color: aliceblue;
+    padding: 30px;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid gold;
+}
+
+.records{
+    width: 650px;
+    height: 500px;
+    background-color: #000000;
+    border-radius: 20px;
+    margin-top: 50px;
+
+}
+
+.log{
+    width: 650px;
+    height: 350px;
+    background-color: #000000;
     border-radius: 20px;
 }
 
-.game-header{
-    width: 700px;
-    height: 300px;
-    background-color: #171718;
-    border-radius: 20px;
-    margin: 10px;
+button {
+            background: rgb(226, 194, 12);
+            color: #0a0a1a;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            position: sticky;
+        }
+
+input, button {
+            padding: 10px;
+            font-size: 16px;
+            font-family: monospace;
+            border-radius: 8px;
+            position: sticky;
+        }
+
+input{
+    width: 60%;
+    background: #1a1a2e;
+    border: 1px solid gold;
+    color: gold;
+    height: 40px;
+    border-radius: 10px;
+
+
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+
+
 }
 
-.game-display{
-    width: 700px;
-    height: 600px;
-    background-color: #171718;
-    margin: 10px;
-    border-radius: 20px;
-}
+th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
